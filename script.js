@@ -1,21 +1,10 @@
-// function computerChoice () {
-   
-//     let random = Math.random();
-//     if (random < 0.33) {
-//         random = ("rock");
-//     }
-    
-//     else if (random <= 0.66 && random > 0.33) {
-//         random = ("paper");
-//     }
+const pChoice = document.querySelector('.playerc');
+const cChoice = document.querySelector('.compc');
+const pScore = document.querySelector('.pscore');
+const cScore = document.querySelector('.cscore');
 
-//     else if (random < 1 && random > 0.66) {
-//         random = ("scissors");
-//     }
-  
-//     return random;
-// }  
-
+pChoice.style.color = "yellow"
+cChoice.style.color = "yellow"
 
 function game (player, computer) {
 
@@ -23,14 +12,26 @@ function game (player, computer) {
     if (player === "rock") {
         if (computer ==="rock") {
              tie;
+             pScore.innerHTML = userScore;
+             cScore.innerHTML = computerScore;
+             pChoice.innerHTML = player;
+             cChoice.innerHTML = computer;
         }
         else if (computer === "scissor") {
             userScore++;
+            pScore.innerHTML = userScore;
+            cScore.innerHTML = computerScore;
+            pChoice.innerHTML = player;
+            cChoice.innerHTML = computer;
              win;
           
         }
         else {
             computerScore++;
+            // pScore.innerHTML = userScore;
+            cScore.innerHTML = computerScore;
+            pChoice.innerHTML = player
+            cChoice.innerHTML = computer;
              lose;
             
         }
@@ -39,15 +40,28 @@ function game (player, computer) {
 
 if (player === "paper") {
     if (computer ==="paper") {
+        pScore.innerHTML = userScore;
+        cScore.innerHTML = computerScore;
+        pChoice.innerHTML = player;
+        cChoice.innerHTML = computer;
          tie;
     }
     else if (computer === "scissor") {
         computerScore++;
+        // pScore.innerHTML = userScore;
+        cScore.innerHTML = computerScore;
+        // pChoice.innerHTML = player;
+        cChoice.innerHTML = computer;
+         
          lose;
         
     }
     else{
-        userScore++;
+       userScore++;
+        pScore.innerHTML = userScore;
+        // cScore.innerHTML = computerScore;
+        pChoice.innerHTML = player;
+        cChoice.innerHTML = computer;
          win;
         
     }
@@ -57,15 +71,28 @@ if (player === "paper") {
 
 if (player === "scissor") {
     if (computer ==="scissor") {
+        pScore.innerHTML = userScore;
+        cScore.innerHTML = computerScore;
+        pChoice.innerHTML = player;
+        cChoice.innerHTML = computer;
          tie;
     }
     else if (computer === "paper") {
         userScore++;
+        pScore.innerHTML = userScore;
+        // cScore.innerHTML = computerScore;
+        pChoice.innerHTML = player;
+        cChoice.innerHTML = computer;
+       
          win;
        
     }
     else {
         computerScore++;
+        // pScore.innerHTML = userScore;
+        cScore.innerHTML = computerScore;
+        pChoice.innerHTML = player;
+        cChoice.innerHTML = computer;
          lose;
         
     }
@@ -87,6 +114,7 @@ const computerOptions = ["rock", "paper", "scissor"]
 const options = document.querySelectorAll('.container button');
 
 
+
 options.forEach(option => {
     option.addEventListener('click', function() {
         const computerNumber = Math.floor(Math.random()*3);
@@ -99,12 +127,15 @@ console.log ("You picked : " + this.textContent);
 console.log ("Computer picked : " + computerChoice);
 console.log ("Your score = " +userScore);
  console.log ("Computer score = " +computerScore);
+
  
 
 
 })
 
+
 })
 ;
+
 
 
